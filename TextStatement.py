@@ -3,7 +3,7 @@ Created on Jan 18, 2018
 
 @author: hoymm
 '''
-from TimeLineIntoDigits import TimeLineIntoDigits
+from Timing import Timing
 
 
 class TextStatement:
@@ -14,7 +14,7 @@ class TextStatement:
         singleLines = txt.split('\n')
         if len(singleLines) > 1:
             self.Id = singleLines[0]
-            self.Timing = TimeLineIntoDigits(singleLines[1])
+            self.Timing = Timing(singleLines[1])
             self.textToShow = singleLines[2:]
 
     def printInfo(self):

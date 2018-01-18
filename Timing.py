@@ -6,7 +6,7 @@ Created on Jan 18, 2018
 import re
 
 
-class TimeLineIntoDigits:
+class Timing:
     def __init__(self, stringLine):
         try:
             self.convertStringTimingLineIntoTwoIntegerValues(stringLine)
