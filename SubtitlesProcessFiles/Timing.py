@@ -39,4 +39,4 @@ class Timing:
         secondsAsMs = int(strNumbs[2]) * 1000
         ms = int(strNumbs[3])
 
-        return hoursAsMs + minAsMs + secondsAsMs + ms
+        return int(hoursAsMs + minAsMs + secondsAsMs + ms)

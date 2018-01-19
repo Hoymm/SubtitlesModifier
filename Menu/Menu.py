@@ -21,6 +21,9 @@ class Menu:
                 if self.menuMoveSubtitles.invoke():
                     print("Przesunięcie napisów zakończone sukcesem.")
                     return True
+                else:
+                    print("Przesunięcie napisów anulowane.")
+                    return False
             elif choose == '2':
                 print("Zmieniam prędkość wyświetlania")
             elif choose == '0':

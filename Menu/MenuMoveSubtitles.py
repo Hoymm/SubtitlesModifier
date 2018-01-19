@@ -17,10 +17,11 @@ class MenuMoveSubtitles:
     def invoke(self):
         direction = self.getDirection()
         if direction != Direction.EXIT:
-            self.timeToMove = int(self.getAndCalculateTimeToMove(direction))
+            self.timeToMove = self.getAndCalculateTimeToMove(direction)
             for i in range(len(self.subtitles.subtitlesStatements)):
                 self.subtitles.subtitlesStatements[i].moveTimeByMs(self.timeToMove)
-        return True
+            return True
+        return False
 
     def getAndCalculateTimeToMove(self, direction):
         timeToMove = self.getTimeToMoveSubtitles()
@@ -51,14 +52,13 @@ class MenuMoveSubtitles:
 
     @staticmethod
     def getTimeToMoveSubtitles():
-        subtitlesTimeChange = ""
         try:
             print("\nWybierz czas o jaki chcesz przesunąć napisy")
             print("musisz użyć formatu hh:mm:ss;fff")
             print("np. \"01:32:04;23\" oznacza przesunięcie o 1 godzine, 32 minuty 4 sekundy i 232 milisekundy")
             subtitlesTimeChange = raw_input('Podaj czas przesunięcia w odpowiednim formacie: ')
             msToMove = Timing.timeStringLineIntoMilliseconds(subtitlesTimeChange)
-            return int(msToMove)
+            return msToMove
         except WrongTimeFormat:
             print("Błędny format podanych danych, spróbuj ponownie.")
             print("Pamiętaj że ilość cyfr musi zgadzać się z formatem")
