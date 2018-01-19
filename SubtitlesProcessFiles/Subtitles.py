@@ -11,13 +11,14 @@ class Subtitles:
         self.subtitlesStatements = self.openFileAndConvertToSubtitlesStatements(subtitlesFileName)
 
     def openFileAndConvertToSubtitlesStatements(self, subtitlesFileName):
+        subtitlesFilePath = 'Napisy/' + subtitlesFileName
         resultStatements = []
         try:
-            self.subtitlesFile = open(subtitlesFileName, 'r+w')
+            self.subtitlesFile = open(subtitlesFilePath, 'r+w')
         except IOError as e:
             print "I/O error({0}): {1}".format(e.errno, e.strerror)
         except:  # handle other exceptions such as attribute errors
-            print "Unexpected error while trying to open file: " + subtitlesFileName
+            print "Unexpected error while trying to open file: " + subtitlesFilePath
 
         statemtentsList = self.subtitlesFile.read().split('\n\n')[0:-1]
         for i in range(len(statemtentsList)):

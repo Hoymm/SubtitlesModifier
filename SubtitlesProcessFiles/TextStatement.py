@@ -21,3 +21,8 @@ class TextStatement:
         print('ID: ' + str(self.Id) + '\nFROM ' + str(self.Timing.msFrom) + ' TO ' + str(self.Timing.msTo))
         for i in range(len(self.textToShow)):
             print(self.textToShow[i])
+
+    def moveTimeByMs(self, ms):
+        print("Move by: " + str(ms))
+        self.Timing.msTo += ms
+        self.Timing.msFrom += ms
