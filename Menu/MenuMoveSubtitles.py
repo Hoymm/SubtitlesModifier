@@ -54,8 +54,8 @@ class MenuMoveSubtitles:
     def getTimeToMoveSubtitles():
         try:
             print("\nWybierz czas o jaki chcesz przesunąć napisy")
-            print("musisz użyć formatu hh:mm:ss;fff")
-            print("np. \"01:32:04;23\" oznacza przesunięcie o 1 godzine, 32 minuty 4 sekundy i 232 milisekundy")
+            print("musisz użyć formatu hh:mm:ss,fff")
+            print("np. \"01:32:04,23\" oznacza przesunięcie o 1 godzine, 32 minuty 4 sekundy i 232 milisekundy")
             subtitlesTimeChange = raw_input('Podaj czas przesunięcia w odpowiednim formacie: ')
             msToMove = Timing.timeStringLineIntoMilliseconds(subtitlesTimeChange)
             return msToMove

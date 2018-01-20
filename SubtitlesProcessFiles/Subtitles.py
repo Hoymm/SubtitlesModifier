@@ -32,3 +32,11 @@ class Subtitles:
         except IOError:
             "Unable to close the file."
             raise
+
+    def saveToFile(self, fileName):
+        file = open('Napisy/' + str(fileName) + '.srt', 'a')
+        for i in range(len(self.subtitlesStatements)):
+            dataFragment = self.subtitlesStatements[i].getSRTFormat()
+            file.write(dataFragment)
+        print("File has been saved to " + fileName + ".srt file :) Check it.")
+        file.close()
